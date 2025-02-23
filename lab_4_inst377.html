@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>lab 4 inst377</title>
+    <link rel="stylesheet" href="lab_4_inst377.css">
+</head>
+<body>
+    <h1 id="heading">inst377 - lab 4</h1>
+    <div class=main-bg-box>
+        <div class="bg-box">
+            <form name="alertmeForm" onsubmit="return showAlert(event)">
+                <label for="name">name:</label>
+                <input type="text" id="name" required>
+                <button type="submit">alert me!</button>
+            </form>
+        </div>
+        <script>
+            function showAlert(event) {
+                event.preventDefault();
+                var nameInput = document.getElementById("name").value;
+                console.log("name input received:", nameInput);
+                if (nameInput !== "") {
+                    alert("^_^ hi " + nameInput + "! ^_^");
+                }
+            }
+        </script>
+
+        <div class="bg-box">
+            <form name="texttestForm" onsubmit="return formValidation(event)">
+                <label for="texttest">text tester:</label>
+                <input type="text" id="texttest" required>
+                <button type="submit">validate text</button>
+            </form>
+        </div>
+        <script>
+            function formValidation(event) {
+                event.preventDefault();
+                var textInput = document.getElementById("texttest").value;
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(textInput)) {
+                    console.log("text has a special character");
+                    alert("text invalid");
+                } else {
+                    console.log("text does not have a special character");
+                    alert("text is valid");
+                }
+            }
+        </script>
+    </div>
+
+    <div class="alt-box">
+        <div class="bg-box">
+            <button onclick="changeColor()">change color</button>
+        </div>
+        <script>
+            function changeColor() {
+                if (document.body.style.backgroundColor === "lightpink" || document.body.style.backgroundColor === "") {
+                    document.body.style.backgroundColor = "lavender";
+                    console.log("background color has been changed to lavender purple");
+                } else {
+                    document.body.style.backgroundColor = "lightpink";
+                    console.log("background color has been changed to light pink");
+                }
+            }
+        </script>
+        <div class="bg-box">
+            <button onclick="addText()">add text</button>
+        </div>
+        <script>
+            function addText() {
+                var heading = document.getElementById("heading");
+                heading.textContent += " add text";
+                console.log("heading was changed");
+            }
+        </script>
+    </div>
+</body>
+</html>
