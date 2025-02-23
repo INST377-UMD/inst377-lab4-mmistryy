@@ -1,0 +1,26 @@
+
+body {
+    background-color:lavender;
+}
+
+.bg-box {
+    background-color:rgb(6, 118, 255);
+    color:white;
+    border:10px solid rgb(67, 60, 164);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    height: 10%;
+    margin: 15px;
+}
+
+.main-bg-box {
+    width: 50%;
+    float: left;
+    margin: 0;
+}
+.alt-box {
+    width: 50%;
+    float: right;
+    margin: 0;
+}
